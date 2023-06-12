@@ -1,0 +1,7 @@
+{
+  "name": "apk1",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
