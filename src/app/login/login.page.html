@@ -1,0 +1,18 @@
+<ion-content [fullscreen]="true">
+  <div class="container text-center p-tengah">
+
+    <form #formLogin action="">
+      <div class="form m-form">
+        <div class="form-group">
+          <input #username name="username" type="text" class="w-all" placeholder="Username..." required/>
+        </div>
+        <div class="form-group">
+          <input #password name="password" type="password" class="w-all mt-2" placeholder="Password..." required/>
+        </div>
+      </div>
+    </form>
+
+    <button id="btnLogin" class="btn btn-primary mt-3 w-all" (click)="login()">Login</button>
+
+  </div>
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-header>
+  <div class="head p-2">
+    <div class="d-flex">
+      <ion-buttons [routerLink]="['/home']" class="mt-2">
+        <ion-icon
+          name="chevron-back-circle-outline"
+          style="font-size: 40px"
+        ></ion-icon>
+      </ion-buttons>
+      <div class="w-100 text-center align-items-center">
+        <h2 class="h2-header">Kualifikasi Pelamar</h2>
+      </div>
+    </div>
+  </div>
+</ion-header>
+<ion-content>
+  <div>
+    <ion-item class="mt-2" [routerLink]="['/pelamar']">
+      <ion-label>Administrasi</ion-label>
+    </ion-item>
+    <ion-item class="mt-2" [routerLink]="['/p-test']">
+      <ion-label>Test</ion-label>
+    </ion-item>
+    <ion-item class="mt-2" [routerLink]="['/p-interview']">
+      <ion-label>Interview</ion-label>
+    </ion-item>
+    <ion-item class="mt-2" [routerLink]="['/p-lolos']">
+      <ion-label>Lolos</ion-label>
+    </ion-item>
+    <ion-item class="mt-2" [routerLink]="['/p-gagal']">
+      <ion-label>Gagal</ion-label>
+    </ion-item>
+  </div>
+</ion-content>

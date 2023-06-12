@@ -1,0 +1,54 @@
+<ion-header>
+  <div class="head p-2">
+    <div class="d-flex">
+      <ion-buttons [routerLink]="['/loker']" class="mt-2">
+        <ion-icon
+          name="chevron-back-circle-outline"
+          style="font-size: 40px"
+        ></ion-icon>
+      </ion-buttons>
+      <div class="w-100 text-center align-items-center">
+        <h2 class="h2-header">Ubah Loker</h2>
+      </div>
+    </div>
+  </div>
+</ion-header>
+<ion-content>
+  <ion-list lines="full" class="p-3">
+    <div class="d-block mb-2">
+      <ion-label posistion="floating" class="mb-2">ID Loker</ion-label>
+      <ion-input required [(ngModel)]="idloker" class="form-control" readonly></ion-input>
+    </div>
+    <div class="d-block mb-2">
+      <ion-label posistion="floating" class="mb-2">Posisi</ion-label>
+      <ion-input required [(ngModel)]="posisi" class="form-control" placeholder="Posisi pekerjaan"></ion-input>
+    </div>
+    <div class="d-block mb-2">
+      <ion-label posistion="floating">Cabang</ion-label>
+      <ion-input required [(ngModel)]="cabang" class="form-control" placeholder="Cabang pekerjaan"></ion-input>
+    </div>
+    <div class="d-block mb-2">
+      <ion-label posistion="floating">Gaji</ion-label>
+      <ion-input required [(ngModel)]="gaji" class="form-control" placeholder="Gaji pekerjaan"></ion-input>
+    </div>
+    <div class="d-block mb-2">
+      <ion-label posistion="floating">Status</ion-label>
+      <ion-list>
+        <ion-item class="p-0">
+          <ion-select aria-label="loker" class="p-0" [(ngModel)]="status" placeholder="Pilih status">
+            <ion-select-option value="Aktif">Aktif</ion-select-option>
+            <ion-select-option value="Tidak Aktif">Tidak Aktif</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div class="d-block">
+      <ion-label posistion="floating">Deskripsi</ion-label>
+      <ion-textarea required [(ngModel)]="deskripsi" class="form-control mt-0 p-1" placeholder="Deskripsi pekerjaan" rows="20"></ion-textarea>
+    </div>
+    <div class="d-flex mt-2">
+      <ion-button type="button" color="dark" class="me-2" [routerLink]="['/loker']">Cancel</ion-button>
+      <ion-button type="button" (click)="editLoker()" color="primary">Simpan</ion-button>
+    </div>
+  </ion-list>
+</ion-content>

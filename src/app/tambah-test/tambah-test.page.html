@@ -1,0 +1,61 @@
+<ion-header>
+  <div class="head p-2">
+    <div class="d-flex">
+      <ion-buttons [routerLink]="['/test']" class="mt-2">
+        <ion-icon
+          name="chevron-back-circle-outline"
+          style="font-size: 40px"
+        ></ion-icon>
+      </ion-buttons>
+      <div class="w-100 text-center align-items-center">
+        <h2 class="h2-header">Tambah Test</h2>
+      </div>
+    </div>
+  </div>
+</ion-header>
+<ion-content>
+  <ion-list lines="full" class="p-3">
+    <div class="d-block mb-2">
+      <ion-label posistion="floating">Pertanyaan</ion-label>
+      <ion-textarea required [(ngModel)]="pertanyaan" class="form-control mt-0 p-1" placeholder="Deskripsi pekerjaan" rows="5"></ion-textarea>
+    </div>
+    <div class="d-block mb-2">
+      <ion-label posistion="floating" class="mb-2">Pilihan a :</ion-label>
+      <ion-input required [(ngModel)]="p_a" class="form-control" placeholder="Input jawaban a" focused></ion-input>
+    </div>
+    <div class="d-block mb-2">
+      <ion-label posistion="floating">Pilihan b :</ion-label>
+      <ion-input required [(ngModel)]="p_b" class="form-control" placeholder="Input jawaban b"></ion-input>
+    </div>
+    <div class="d-block mb-2">
+      <ion-label posistion="floating">Pilihan c :</ion-label>
+      <ion-input required [(ngModel)]="p_c" class="form-control" placeholder="Input jawaban c"></ion-input>
+    </div>
+    <div class="d-block mb-1">
+      <ion-list class="">
+        <ion-item>
+          <ion-label>Jawaban Benar : </ion-label>
+          <ion-select [(ngModel)]="jwbn" class="w-100" placeholder="Jawaban">
+            <ion-select-option value="a">a</ion-select-option>
+            <ion-select-option value="b">b</ion-select-option>
+            <ion-select-option value="c">c</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div class="d-block mb-2">
+      <ion-list>
+        <ion-item>
+          <ion-label>Posisi </ion-label>
+          <ion-select [(ngModel)]="posisi" class="w-100" placeholder="Posisi">
+            <ion-select-option *ngFor="let posisi of Posisi">{{posisi.l_posisi}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div class="d-flex mt-2">
+      <ion-button type="button" color="dark" class="me-2" [routerLink]="['/test']">Cancel</ion-button>
+      <ion-button type="button" (click)="tambahTest()" color="primary">Simpan</ion-button>
+    </div>
+  </ion-list>
+</ion-content>

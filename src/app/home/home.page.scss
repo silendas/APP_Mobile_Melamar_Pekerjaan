@@ -1,0 +1,221 @@
+@import "~swiper/swiper-bundle";
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.img-swiper {
+  border-radius: 10px;
+}
+
+.header-profile {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/*.swiper-slide{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}*/
+
+ion-menu::part(backdrop) {
+  background-color: rgba(255, 0, 255, 0.5);
+}
+
+ion-menu::part(container) {
+  border-radius: 0 20px 20px 0;
+
+  box-shadow: 4px 0px 16px rgba(255, 0, 255, 0.18);
+}
+
+ion-item {
+  --border-color: #f6f6f6;
+}
+
+ion-icon {
+  color: black;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.btn {
+  width: 150px;
+  border-radius: 15px;
+  background-color: #bccef8;
+  box-shadow: 3px 3px 8px #aaaaaa;
+}
+
+.btn:hover {
+  background-color: aliceblue;
+}
+
+.nama {
+  margin-left: 10px;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+* {
+  outline: none;
+  user-select: none;
+}
+
+body,
+html {
+  margin: 0;
+  background: #ddd;
+  color: #7a7b7c;
+}
+
+.profile {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  background-color: #9ed5c5;
+  animation: show-profile 0.5s forwards ease-in-out;
+  box-shadow: 3px 3px 8px #aaaaaa;
+}
+@keyframes show-profile {
+  0% {
+    width: 0;
+  }
+}
+.profile .content {
+  box-sizing: border-box;
+}
+.profile .photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #7a7b7c;
+  background-color: transparent;
+
+  animation: rotate-photo 0.5s forwards ease-in-out;
+}
+@keyframes rotate-photo {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+.profile .photo img {
+  width: 100%;
+}
+.profile .content {
+  padding: 10px;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.profile .content::before {
+  content: "";
+  position: absolute;
+  width: 230px;
+  height: 150px;
+  background-color: transparent;
+  left: 0;
+  top: -20px;
+  z-index: -1;
+  transform: rotate(-8deg);
+}
+.profile .content .text {
+  margin-top: 0px;
+  margin-left: 65px;
+  color: #3f3b6c;
+}
+.profile .content .text h3,
+.profile .content .text h6 {
+  font-weight: normal;
+  margin: 3px 0;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.profile .content .btn {
+  background-color: #9ed5c5;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  border-radius: 50%;
+  z-index: 1;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  animation: pop-btn 0.3s both ease-in-out 0.5s;
+}
+@keyframes pop-btn {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.profile .content .btn:hover {
+  box-shadow: 0 0 0 5px rgba(170, 187, 204, 0.5);
+}
+.profile .content .btn ion-icon {
+  position: absolute;
+  top: 6px;
+  left: 7px;
+  animation: to-hamburger 0.3s forwards ease-in-out;
+}
+.profile .content .btn span::before,
+.profile .content .btn span::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  background-color: transparent;
+  transition-duration: 0.3s;
+  transform: rotate(0deg);
+  right: 0;
+}
+.profile .content .btn span::before {
+  margin-top: -7px;
+}
+.profile .content .btn span::after {
+  margin-top: 7px;
+}
+.profile .content .btn.active span {
+  animation: to-arrow 0.3s forwards ease-in-out;
+}
+.profile .content .btn.active span::before,
+.profile .content .btn.active span::after {
+  width: 60%;
+  right: -1px;
+}
+.profile .content .btn.active span::before {
+  transform: rotate(45deg);
+}
+.profile .content .btn.active span::after {
+  transform: rotate(-45deg);
+}
+@keyframes to-hamburger {
+  from {
+    transform: translateY(-50%) rotate(-180deg);
+  }
+}
+@keyframes to-arrow {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(180deg);
+  }
+}

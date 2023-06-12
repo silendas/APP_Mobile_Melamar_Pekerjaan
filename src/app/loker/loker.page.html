@@ -1,0 +1,52 @@
+<ion-header>
+  <div class="head p-2">
+    <div class="d-flex">
+      <ion-buttons [routerLink]="['/home']" class="mt-2">
+        <ion-icon
+          name="chevron-back-circle-outline"
+          style="font-size: 40px"
+        ></ion-icon>
+      </ion-buttons>
+      <div class="w-100 text-center align-items-center">
+        <h2 class="h2-header">Lowongan Kerja</h2>
+      </div>
+    </div>
+  </div>
+</ion-header>
+<ion-content style="--background: #fff">
+  <div class="container text-center pt-3">
+    <div class="d-block">
+      <div class="d-block justify-content-start">
+        <button class="btn btn-primary w-100" (click)="tambahLoker()">TAMBAH</button>
+        <ion-list>
+          <ion-item>
+            <ion-select [(ngModel)]="search" class="w-100" placeholder="Cabang" >
+              <ion-select-option *ngFor="let cabang of Cabang">{{cabang.l_cabang}}</ion-select-option>
+            </ion-select>
+            <ion-button color="primary" type="button" (click)="Search()">Search</ion-button>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+    <div class="p-2 text-start">
+      <div class="card p-4 d-block mb-2 shadow" *ngFor="let loker of Loker">
+        <div class="d-flex">
+          <h5 class="mt-0">{{loker.posisi}} |</h5>
+          <h5 class="mt-0 ms-1">{{loker.cabang}}</h5>
+        </div>
+        <h6 class="mt-0">Gaji : Rp.{{loker.gaji}}</h6>
+        <h6 class="mt-0">Status : {{loker.status}}</h6>
+        <h6 class="mt-0">Tgl Publish : {{loker.tgl_pblsh}}</h6>
+        <div class="mb-2">
+          <label for="" class="mb-2">Deskripsi :</label>
+          <ion-textarea class="form-control mt-0 p-1" rows="5">{{loker.deskripsi}}</ion-textarea>
+        </div>
+        <div>
+          <ion-button color="danger" slot="end" (click)="editStatus(loker.id_loker, 'Tidak Aktif')">Hapus</ion-button>
+          <ion-button color="warning" slot="end" [routerLink]="['/ubah-loker/',loker.id_loker]">Ubah</ion-button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

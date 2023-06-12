@@ -1,0 +1,57 @@
+.container {
+  background: url("../../assets/bg_alfa.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  //-webkit-background-size: 300% auto;
+  background-position: center;
+  height: 100%;
+  //padding: 0;
+}
+
+.m-form{
+  margin-top: 45%;
+}
+
+.w-all {
+  width: 95%;
+}
+
+.p-tengah {
+  padding-top: 40%;
+}
+
+.forgot {
+  margin-right: 5%;
+  float: right;
+  font-size: 13px;
+}
+
+input {
+  height: 40px;
+  border: 1px #fff solid;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #000;
+  box-shadow: 3px 3px 8px #aaaaaa;
+  font-size: 15px;
+  padding: 8px;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #5da7db;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  font-weight: bold;
+}
+
+h1 {
+  font-weight: bold;
+}

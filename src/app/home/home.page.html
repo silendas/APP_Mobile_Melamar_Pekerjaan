@@ -1,0 +1,53 @@
+<ion-content class="" style="--background: #fff; margin-top: -1px">
+  <div class="container mt-2 mb-3">
+    <div class="profile">
+      <div class="photo">
+        <img src="../../assets/woman.png" />
+      </div>
+      <div class="content">
+        <div class="text" *ngFor="let user of HRD">
+          <h3 style="font-size: 17px">Hi..</h3>
+          <h6 style="font-size: 17px">{{user.nama}}</h6>
+        </div>
+        <div class="btn" [routerLink]="['/login']">
+          <ion-icon name="log-out-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="studies justify-content-center mt-3 d-flex">
+      <button class="btn p-3" [routerLink]="['/kualifikasi']">
+        <img
+          src="../../assets/division.png"
+          alt=""
+          width="100px"
+          height="100px"
+          id="avatar-img"
+        />
+        <p class="mt-3">Pelamar</p>
+      </button>
+      <button class="btn ms-3 p-3" [routerLink]="['/loker']">
+        <img
+          src="../../assets/jobs.png"
+          alt=""
+          width="100px"
+          height="100px"
+          id="avatar-img"
+        />
+        <p class="mt-3">Loker</p>
+      </button>
+    </div>
+    <div class="studies justify-content-center mt-3 d-flex">
+      <button class="btn p-3-" [routerLink]="['/test']">
+        <img
+          src="../../assets/test.png"
+          alt=""
+          width="100px"
+          height="100px"
+          id="avatar-img"
+        />
+        <p class="mt-3">Test</p>
+      </button>
+    </div>
+    </div>
+</ion-content>
